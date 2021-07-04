@@ -14,6 +14,8 @@ public class LibraryTest {
     }
 
     public Restaurant test = new Restaurant("today restaurant", 3, "JD");
+    public Shop test2 = new Shop("Madena Shop", "it's for accessories ", 8);
+    public Theater test3 = new Theater("Albalad");
 
     @Test
     public void testRestaurantToString() {
@@ -32,9 +34,42 @@ public class LibraryTest {
     @Test
     public void testAddReview() {
         Review review = new Review("review 1", "Bayan", 3);
-        test.addReview(review);
+        test.createReview(review);
         String output = test.toString();
         String expected = "Restaurant{name='today restaurant', numOfStars=3, priceCategory='JD', reviews=[Review{body='review 1', author='Bayan', numOfStars=3}]}";
         assertEquals(expected, output);
     }
+    @Test
+    public void testShopToString() {
+        String output = test2.toString();
+        String expected = "Shop{name='Madena Shop', description='it's for accessories ', numOfDollarSigns=8, reviews=[]}";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testAddReviewForShop() {
+        Review shopReview=new Review("shop Review1","Aya",5);
+        test2.createReview(shopReview);
+        String output = test2.toString();
+        String expected = "Shop{name='Madena Shop', description='it's for accessories ', numOfDollarSigns=8, reviews=[Review{body='shop Review1', author='Aya', numOfStars=5}]}";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testTheaterToString() {
+        String output = test3.toString();
+        String expected = "Theater{name='Albalad', movies=[], theaterReviews=[]}";
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void testAddReviewForTheater() {
+        Review theater1review=new Review("theater Review","Esraa",5);
+        test3.addMovie("beSafe");
+        test3.createReview(theater1review);
+        String output = test3.toString();
+        String expected = "Theater{name='Albalad', movies=[beSafe], theaterReviews=[Review{body='theater Review', author='Esraa', numOfStars=5}]}";
+        assertEquals(expected, output);
+    }
+
 }

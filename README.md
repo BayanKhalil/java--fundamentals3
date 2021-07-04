@@ -20,3 +20,12 @@ the lab:06 is existing inside the "inheritance" folder
 1. Restaurant : which  have a name, a number of stars between 0 and 5, and a price category and the constructor method
 2. Review :which  have a body, an author, and a number of stars and the constructor method
 3. ableToReview it's an interface for all the restaurants classes
+
+## Lab: 07 - Inheritance2
+the lab:07 is existing inside the "inheritance" folder,inheritance2 Branch
+
+### The lab contains two classes
+we add this two classes into our able to review  session in our country
+1. SHOP : which have a name, description, and number of dollar signs.and the constructor method
+2. THEATER :which have a name and string list of movies
+3. ableToReview it's an interface for all the shop and theater classes
