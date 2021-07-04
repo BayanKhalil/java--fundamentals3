@@ -4,6 +4,12 @@
 package inheritance;
 
 
+
+
+import javax.xml.bind.SchemaOutputResolver;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
@@ -11,17 +17,45 @@ public class Library {
 
     public static void main(String[] args) {
 
-         Restaurant rest1 = new Restaurant("AL-ASALH RESTAURANT", 5, "JD");
-        System.out.println(rest1);
+//         Restaurant rest1 = new Restaurant("AL-ASALH RESTAURANT", 5, "JD");
+//        System.out.println(rest1);
+//
+//        Review review1 = new Review( "review 1", "tala", 2);
+//        System.out.println(review1);
+//
+//        Review review2 = new Review("review 2", "Bayan", 3);
+//        Review review3 = new Review("review 3", "Rana", 4);
+//        rest1.createReview(review2);
+//        rest1.createReview(review3);
+//        System.out.println(rest1);
 
-        Review reviwe1 = new Review( "review 1", "tala", 2);
-        System.out.println(reviwe1);
+//       list of shops reviews
+        List<Review> shopReviews = new ArrayList<>();
+        Shop shop1 = new Shop("Madena Shop", "it's for accessories ", 8);
+        Review shopReview1=new Review("shop Review1","Aya",5);
+//        shopReviews.add(shopReview);
+//        for (Review rev:shopReviews){
+//            System.out.println(rev);
+//        }
+        shop1.createReview(shopReview1);
+        System.out.println(shop1);
 
-        Review review2 = new Review("review 2", "Bayan", 3);
-        Review review3 = new Review("review 3", "Rana", 4);
-        rest1.addReview(review2);
-        rest1.addReview(review3);
-        System.out.println(rest1);
+
+        //>>>>>>>>>>>>>>>>>>>>>>.theater>>>>>
+        List<String> movies=new ArrayList<>();;
+        List<Review> theaterReviews = new ArrayList<>();
+        Theater theater1=new Theater("Albalad");
+        String movie1="beSafe";
+        Review theater1review=new Review("theater Review","Esraa",5);
+        theater1.addMovie(movie1);
+        theater1.createReview(theater1review);
+//        System.out.println(theater1);
+
+        String movie2="dfdf";
+
+        theater1.removeMovie(movie2);
+        System.out.println(theater1);
+
     }
 
 

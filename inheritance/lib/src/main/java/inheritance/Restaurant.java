@@ -3,11 +3,11 @@ package inheritance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant implements ableToReview{
+ public class Restaurant implements ableToReview{
     private String name;
     private int numOfStars;
     private String priceCategory;
-    List<Review> reviews = new ArrayList<>();
+    List<Review> restReviews = new ArrayList<>();
 
     public Restaurant(String name, int numOfStars, String priceCategory) {
         this.name = name;
@@ -47,21 +47,25 @@ public class Restaurant implements ableToReview{
                     "name='" + name + '\'' +
                     ", numOfStars=" + numOfStars +
                     ", priceCategory='" + priceCategory + '\'' +
-                    ", reviews=" + reviews +
+                    ", reviews=" + restReviews +
                     '}';
         }
 
 
-    @Override
-    public void addReview(String body, String author, int numOfStars) {
-       Review newRev= new Review(body,author,numOfStars);
-//
-    }
 
-    public void addReview(Review review) {
-        if( ! this.reviews.contains(review)) {
+
+    public void createReview(Review review) {
+        if( ! this.restReviews.contains(review)) {
             this.setNumOfStars(review.getNumOfStars());
-            this.reviews.add(review);
+            this.restReviews.add(review);
         }
     }
-}
+
+
+     @Override
+     public void createReview(String body, String author, int numOfStars) {
+      body="override ";
+     }
+
+
+ }
